@@ -50,6 +50,17 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        jk {
+            bindings = <&kp RALT>;
+            key-positions = <23 24>;
+            timeout-ms = <30>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
