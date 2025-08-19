@@ -48,7 +48,7 @@ layers:
   - {t: '$$mdi:keyboard-esc$$', h: FUNC}
   - NUMBER
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:backspace-reverse-outline$$', h: OPERAT}
+  - OPERAT
   OPERAT:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
