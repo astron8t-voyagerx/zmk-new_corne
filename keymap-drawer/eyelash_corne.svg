@@ -552,6 +552,10 @@ rect.held, rect.combo.held {
 <a href="#OPERAT">
 <text x="0" y="24" class="key hold layer-activator">OPERAT</text>
 </a></g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="742" y="74" width="28" height="26" class="combo"/>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="747" y="78" height="18" width="18.0" class="combo tap glyph mdi:apple-keyboard-option"/>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-OPERAT">
