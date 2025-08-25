@@ -43,7 +43,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&to>, <&td_to123>;
-        }
+        };
 
         lt: layer_tap { tapping-term-ms = <125>; };
 
@@ -81,10 +81,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E         &kp R                 &kp T                             &kp UP                &kp Y  &kp U      &kp I      &kp O    &kp P     &ht_td_to 4 0
-&kp LCTRL  &kp A  &kp S  &kp D         &kp F                 &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LGUI   &kp Z  &kp X  &kp C         &kp V                 &kp B      &kp SPACE              &kp DOWN              &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &mt LALT TAB  &mt LEFT_SHIFT SPACE  &lt 3 ESC                                               &lt 2 BACKSPACE   &kp SPACE  &lt 1 DEL
+&kp TAB    &kp Q  &kp W  &kp E         &kp R                 &kp T                             &kp UP                &kp Y            &kp U      &kp I      &kp O    &kp P     &ht_td_to 4 0
+&kp LCTRL  &kp A  &kp S  &kp D         &kp F                 &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H            &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LGUI   &kp Z  &kp X  &kp C         &kp V                 &kp B      &kp SPACE              &kp DOWN              &kp N            &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT ENTER
+                         &mt LALT TAB  &mt LEFT_SHIFT SPACE  &lt 3 ESC                                               &lt 2 BACKSPACE  &kp SPACE  &lt 1 DEL
             >;
         };
 
