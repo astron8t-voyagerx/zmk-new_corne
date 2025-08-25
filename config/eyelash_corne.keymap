@@ -39,7 +39,7 @@
         ht_td_to4: ht_td_to4 {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_TD_TO4";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&td_to123>, <&to 4>;
