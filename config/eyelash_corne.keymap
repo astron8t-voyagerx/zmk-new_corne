@@ -28,11 +28,21 @@
 
 / {
     behaviors {
-        td0: td0 {
+        td_to123: td_to123 {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
+            label = "TD_TO123";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            tapping-term-ms = <200>;
+            bindings = <&to 1>, <&to 2>, <&to 3>;
+        };
+
+        ht_td_to4: ht_td_to4 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TD_TO4";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&td_to123>, <&to 4>;
         };
 
         lt: layer_tap { tapping-term-ms = <125>; };
@@ -71,17 +81,17 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E         &kp R                 &kp T                             &kp UP                &kp Y  &kp U      &kp I      &kp O    &kp P     &to 1
+&kp TAB    &kp Q  &kp W  &kp E         &kp R                 &kp T                             &kp UP                &kp Y  &kp U      &kp I      &kp O    &kp P     &ht_td_to4
 &kp LCTRL  &kp A  &kp S  &kp D         &kp F                 &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LGUI   &kp Z  &kp X  &kp C         &kp V                 &kp B      &kp SPACE              &kp DOWN              &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &mt LALT TAB  &mt LEFT_SHIFT SPACE  &lt 3 ESC                                               &mo 2  &kp SPACE  &lt 1 DEL
+                         &mt LALT TAB  &mt LEFT_SHIFT SPACE  &lt 3 ESC                                               &lt 2 BACKSPACE   &kp SPACE  &lt 1 DEL
             >;
         };
 
         operation_layer {
             display-name = "OPERAT";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                &mmv MOVE_UP                     &kp PAGE_UP    &kp F15   &kp UP    &kp BACKSPACE  &none     &to 2
+&trans  &trans  &trans  &trans  &trans  &trans                                &mmv MOVE_UP                     &kp PAGE_UP    &kp F15   &kp UP    &kp BACKSPACE  &none     &ht_td_to4
 &trans  &trans  &trans  &trans  &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT      &kp RALT  &kp F14
 &trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp CAPS       &kp HOME  &kp END   &kp ENTER      &kp DEL   &kp F13
                         &trans  &trans  &trans                                                                 &trans         &trans    &none
@@ -91,7 +101,7 @@
         number_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &none      &kp N7  &kp N8  &kp N9        &none                                   &mmv MOVE_UP                     &kp C_VOL_UP  &none             &kp MINUS          &kp EQUAL      &none   &to 3
+&trans  &none      &kp N7  &kp N8  &kp N9        &none                                   &mmv MOVE_UP                     &kp C_VOL_UP  &none             &kp MINUS          &kp EQUAL      &none   &ht_td_to4
 &trans  &none      &kp N4  &kp N5  &kp NUMBER_6  &kp KP_COMMA            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_VOL_DN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans  &trans
 &trans  &kp GRAVE  &kp N1  &kp N2  &kp N3        &kp KP_DOT    &trans                    &mmv MOVE_DOWN                   &kp C_MUTE    &kp C_PLAY_PAUSE  &trans             &trans         &trans  &trans
                            &trans  &kp N0        &trans                                                                   &none         &trans            &trans
@@ -101,7 +111,7 @@
         function_layer {
             display-name = "FUNC";
             bindings = <
-&trans  &none          &kp LS(N7)  &kp LS(N8)        &kp LS(N9)  &kp LS(N0)                                &mmv MOVE_UP                     &kp F12  &kp F7  &kp F8  &kp F9  &kp F15  &to 4
+&trans  &none          &kp LS(N7)  &kp LS(N8)        &kp LS(N9)  &kp LS(N0)                                &mmv MOVE_UP                     &kp F12  &kp F7  &kp F8  &kp F9  &kp F15  &ht_td_to4
 &trans  &none          &kp LS(N4)  &kp LS(NUMBER_5)  &kp LS(N6)  &none                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F11  &kp F4  &kp F5  &kp F6  &kp F14  &none
 &trans  &kp LS(GRAVE)  &kp LS(N1)  &kp LS(N2)        &kp LS(N3)  &none       &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F10  &kp F1  &kp F2  &kp F3  &kp F13  &none
                                    &trans            &trans      &none                                                                      &trans   &trans  &trans
@@ -110,7 +120,7 @@
 
         factory_layer {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans  &trans  &trans  &trans  &trans  &to 0
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans  &trans  &trans  &trans  &trans  &ht_td_to4
 &trans  &out OUT_TOG  &trans        &trans        &trans        &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &bt BT_CLR    &trans        &trans        &trans        &trans        &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans        &trans        &trans                                          &trans  &trans  &trans
