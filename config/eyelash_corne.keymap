@@ -101,9 +101,9 @@
         number_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &none      &kp N7  &kp N8  &kp N9        &none                                   &mmv MOVE_UP                     &kp C_VOL_UP  &none             &kp MINUS          &kp EQUAL      &none   &ht_td_to 4 0
-&trans  &none      &kp N4  &kp N5  &kp NUMBER_6  &kp KP_COMMA            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_VOL_DN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3        &kp KP_DOT    &trans                    &mmv MOVE_DOWN                   &kp C_MUTE    &kp C_PLAY_PAUSE  &trans             &trans         &trans  &trans
+&trans  &none      &kp N7  &kp N8  &kp N9        &none                                   &mmv MOVE_UP                     &kp C_VOL_UP  &none             &kp MINUS         &kp EQUAL          &none          &ht_td_to 4 0
+&trans  &none      &kp N4  &kp N5  &kp NUMBER_6  &kp KP_COMMA            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_VOL_DN  &none             &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3        &kp KP_DOT    &trans                    &mmv MOVE_DOWN                   &kp C_MUTE    &kp C_PLAY_PAUSE  &trans            &trans             &trans         &trans
                            &trans  &kp N0        &trans                                                                   &none         &trans            &trans
             >;
         };
