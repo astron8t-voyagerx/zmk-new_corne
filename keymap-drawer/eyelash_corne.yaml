@@ -42,11 +42,11 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-esc$$', h: FUNC}
-  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
+  - NUMBER
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace-reverse-outline$$', h: OPERAT}
   OPERAT:
@@ -249,3 +249,6 @@ combos:
 - p: [23, 24]
   k: $$mdi:apple-keyboard-option$$
   l: [QWERTY]
+- p: [44, 45]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
+  l: [QWERTY, NUMBER, OPERAT, FUNC]
